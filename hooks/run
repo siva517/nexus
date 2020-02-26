@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# When debugging, we might need it to not die at the first hurdle.
+# set +e
+
+# Ensure we see stdout and stderr in the logs
+exec 2>&1
+
+# Make sure our app can find the JRE
+export JAVA_HOME={{pkgPathFor "core/jre8"}}
+export INSTALL4J_JAVA_HOME=={{pkgPathFor "core/jre8"}}
+#Nexus_Home=/hab/pkgs/sthumati/nexus/3.15.2/20191023142028/nexus-3.15.2-01/
+export NEXUS_HOME="{{pkg.path}}"
+# Check if we need to initialise the work directory
+if [ ! -d "{{cfg.workdir}}" ] ; then
+  echo "Initializing Sonatype Work Directory"
+  mkdir -p {{cfg.workdir}}
+  cp -R {{pkg.path}}/sonatype-work/* {{cfg.workdir}}
+  mkdir -p {{cfg.workdir}}/prefs
+fi
+if [ ! -d "{{cfg.workdir}}/prefs" ] ; then
+  mkdir -p {{cfg.workdir}}/prefs
+fi
+
+
+#if [ -f "/hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus.properties" ] ; then
+#  echo "Removing old Nexus customisations"
+#  unlink /hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus-default.properties
+#fi
+#echo "Connecting dynamic Nexus customisations"
+#ln -s /hab/svc/nexus/config/nexus.properties /hab/pkgs/sthumati/nexus/3.15.2/20191014195354/nexus-3.15.2-01/etc/nexus-default.properties
+
+#if [ -f "/hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus-default.properties" ] ; then
+#  echo "Removing old Nexus customisations"
+#  unlink /hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus-default.properties
+#fi
+#echo "Connecting dynamic Nexus customisations"
+#ln -s /hab/svc/nexus/config/nexus.properties /hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus.properties
+
+echo "Addind permisions to Hab users"
+sudo chown -R hab:hab /hab/pkgs/sthumati
+sudo chmod -R 755 /hab/pkgs/sthumati
+
+echo "Starting Nexus"
+exec "${NEXUS_HOME}"/nexus-3.19.1-01/bin/nexus run
+#exec $Nexus_home/nexus run
