@@ -18,7 +18,7 @@ pkg_source="https://sonatype-download.global.ssl.fastly.net/repository/repositor
 pkg_shasum="7a2e62848abeb047c99e114b3613d29b4afbd635b03a19842efdcd6b6cb95f4e"
 
 # Dependencies
-pkg_deps=(core/jre8/8.172.0/201807102356258)
+pkg_deps=(core/jre8/8.172.0/20180710235625)
 
 # Paths to the application
 pkg_bin_dirs=(nexus-$pkg_fq_version/bin)
