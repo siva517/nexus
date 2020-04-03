@@ -18,7 +18,7 @@ pkg_source="https://sonatype-download.global.ssl.fastly.net/repository/repositor
 pkg_shasum="7a2e62848abeb047c99e114b3613d29b4afbd635b03a19842efdcd6b6cb95f4e"
 
 # Dependencies
-pkg_deps=(fnv-releng/openjdk/1.8.0_40-b25/20190719191545)
+pkg_deps=(core/openjdk)
 
 # Paths to the application
 pkg_bin_dirs=(nexus-$pkg_fq_version/bin)
