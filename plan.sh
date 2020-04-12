@@ -1,6 +1,6 @@
 pkg_origin=sthumati
 pkg_name="nexus"
-pkg_maintainer="Sivakrishna <sthumati.com>"
+pkg_maintainer="Sivakrishna <siva517>"
 pkg_description="Sonatype Nexus Reposiroty Manager"
 pkg_upstream_url="https://www.sonatype.com"
 
