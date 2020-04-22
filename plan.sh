@@ -1,6 +1,6 @@
 pkg_origin=sthumati
 pkg_name="nexus"
-pkg_maintainer="Sivakrishna <siva517>"
+pkg_maintainer="Sivakrishna <sthumati.com>"
 pkg_description="Sonatype Nexus Reposiroty Manager"
 pkg_upstream_url="https://www.sonatype.com"
 
@@ -18,7 +18,7 @@ pkg_source="https://sonatype-download.global.ssl.fastly.net/repository/repositor
 pkg_shasum="7a2e62848abeb047c99e114b3613d29b4afbd635b03a19842efdcd6b6cb95f4e"
 
 # Dependencies
-pkg_deps=(core/openjdk11/11.0.2/20190611004012)
+pkg_deps=(core/jdk8/8.192.0/20190115162852)
 
 # Paths to the application
 pkg_bin_dirs=(nexus-$pkg_fq_version/bin)
@@ -79,4 +79,3 @@ fi
 #ln -s /hab/svc/nexus/config/nexus $pkg_prefix/nexus-$pkg_fq_version/bin/nexus
   return 0
 }
-
