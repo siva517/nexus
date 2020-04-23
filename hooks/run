@@ -38,9 +38,9 @@ fi
 #ln -s /hab/svc/nexus/config/nexus.properties /hab/svc/nexus/data/sonatype-work/nexus3/etc/nexus.properties
 
 echo "Addind permisions to Hab users"
-sudo chown -R hab:hab /hab/pkgs/sthumati
-sudo chmod -R 755 /hab/pkgs/sthumati
+sudo chown -R hab:hab /hab/pkgs/siva517
+sudo chmod -R 755 /hab/pkgs/siva517
 
 echo "Starting Nexus"
-exec "${NEXUS_HOME}"/nexus-3.19.1-01/bin/nexus run
+exec "${NEXUS_HOME}"/nexus-3.22.1-021/bin/nexus run
 #exec $Nexus_home/nexus run
