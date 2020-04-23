@@ -7,9 +7,9 @@ pkg_upstream_url="https://www.sonatype.com"
 pkg_license=("Apache-2.0")
 
 pkg_major="3"
-pkg_minor="19"
+pkg_minor="22"
 pkg_patch="1"
-pkg_rev="01"
+pkg_rev="02"
 pkg_version="${pkg_major}.${pkg_minor}.${pkg_patch}"
 pkg_fq_version="${pkg_version}-${pkg_rev}"
 
