@@ -15,7 +15,7 @@ pkg_fq_version="${pkg_version}-${pkg_rev}"
 
 pkg_filename="nexus-${pkg_fq_version}-unix.tar.gz"
 pkg_source="https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/${pkg_major}/nexus-${pkg_fq_version}-unix.tar.gz"
-pkg_shasum="7a2e62848abeb047c99e114b3613d29b4afbd635b03a19842efdcd6b6cb95f4e"
+pkg_shasum="347a33dd55b556ac1130829c88b5f28b9281d53ac3b40fa78da5b0579e7f4766"
 
 # Dependencies
 pkg_deps=(core/jdk8/8.192.0/20190115162852)
